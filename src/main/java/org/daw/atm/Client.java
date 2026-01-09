@@ -34,6 +34,9 @@ public class Client {
     }
 
     public void setDni(String dni) {
+        if (dni == null || dni.length() != 9){
+            throw new IllegalArgumentException("El DNI ha de tenir 9 caràcters");
+        }
         //"11111111A"
         //substring(0,8)  "11111111"
         String nums= dni.substring(0,8);
@@ -42,16 +45,16 @@ public class Client {
 
         try {
           int numero= Integer.parseInt(nums);
-          char lletraCalculada="TRWAGMYPDXBNJZSQVHLCKE".charAt(numero%23);  
+          String lletres = "TRWAGMYPDXBNJZSQVHLCKE";
+          char lletraCalculada=lletres.charAt(numero%23);  
           if(lletraCalculada!=lletra){
-            throw new IllegalArgumentException("ERROR ");
+            throw new IllegalArgumentException("Lletra del DNI incorrecta");
           }
+
+          this.dni=dni;
+
         } catch (NumberFormatException e) {
-            System.out.println("error ");
-        }catch(IllegalArgumentException e){
-            System.out.println("ERROR ");
-        }catch(StringIndexOutOfBoundsException e){
-            System.out.println("ERROR");
+            throw new IllegalArgumentException("Els primers 8 caràcters han de ser números");
         }
     }
 
