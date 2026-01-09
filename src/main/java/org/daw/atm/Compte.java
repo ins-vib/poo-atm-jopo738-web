@@ -83,12 +83,22 @@ public class Compte {
      return false;
      
     }
-    public void transfarencia (Compte c,double quantitat){
+    public boolean transfarencia (Compte c,double quantitat){
         if(saldo>=quantitat && quantitat>0){
             this.retirar(quantitat);
             c.ingressar(quantitat);
         }
+        if (quantitat<=0){
+            return false;
+        }
+        if(this.retirar(quantitat)){
+            c.ingressar(quantitat);
+            return true;
+        }
+        return false;
     }
+
+    
 
 
     
