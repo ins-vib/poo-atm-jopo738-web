@@ -6,12 +6,16 @@ class Client {
     - intentsFallits: int
     - bloquejat: boolean
 
+    + Client(dni:String,nom:String,pin:String)
+
     + setDni(dni:String)
     + setPin(pin:String)
     + setNom(nom:String)
     + getDni(): String
     + getNom(): String
     + isBloquejat(): boolean
+
+    
 
 }
 
@@ -20,13 +24,21 @@ class compte {
     - saldo: double
     - titular: String
     - interesAnual: double
+    {static} - comptador: int
+    {static} - prefix: String
+
+    + Compte()
+    + Compte(saldo: double)
+
+    + calcularInteresAnual(): double
+    + ingressar(quantitat:double)
+    + retirar(quantitat:double):boolean
+    + transfarencia(desti:Compte,quantitat: double):boolean
 
     + setNumero(numero: String)
     + setSaldo(saldo: double)
     + setTitular(titular: String)
     + setInteresAnual(interesAnual: double)
-    + isRetirar(quantitat: double): boolean
-    + isTransfarencia(c: Compte, quantitat:double): boolean
     + getNumero(): String
     + getSaldo(): double
     + getTitular(): String

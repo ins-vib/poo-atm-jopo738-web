@@ -5,7 +5,7 @@ public class Compte {
     // Atributs    // si no hi ha res escrit es "public"
     private String numero;
     private double saldo;
-    private String titular;
+    private Client titular;
     private double interesAnual;
     
     // perque sigui un atribut que comparteixen tots els objectes que siguin de la classe ("compte" en aquest cas) hem de posar static
@@ -45,12 +45,7 @@ public class Compte {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
-    public String getTitular() {
-        return titular;
-    }
-    public void setTitular(String titular) {
-        this.titular = titular;
-    }
+    
     public double getInteresAnual() {
         return interesAnual;
     }
@@ -96,6 +91,14 @@ public class Compte {
             return true;
         }
         return false;
+    }
+
+    public Client getTitular() {
+        return titular;
+    }
+
+    public void setTitular(Client titular) {
+        this.titular = titular;
     }
 
     

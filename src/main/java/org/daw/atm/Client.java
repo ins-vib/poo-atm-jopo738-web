@@ -46,9 +46,7 @@ public class Client {
             throw new IllegalArgumentException("El DNI ha de tenir 9 caràcters");
         }
 
-        if (dni == null ){
-            throw new IllegalArgumentException("El DNI no pot ser null");
-        }
+      
 
         //"11111111A"
         //substring(0,8)  "11111111"
@@ -63,7 +61,9 @@ public class Client {
         }
 
         String lletres = "TRWAGMYPDXBNJZSQVHLCKE";
+        //System.out.println(lletra);
           char lletraCalculada=lletres.charAt(numero%23);  
+          //System.out.println(lletraCalculada);
           if(lletraCalculada!=lletra){
             throw new IllegalArgumentException("Lletra del DNI incorrecta");
           }
