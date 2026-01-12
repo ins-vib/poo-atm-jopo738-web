@@ -97,29 +97,29 @@ clients[3]=new Client("66666666V","Jaume","6666");
 clients[4]=new Client("77777777N","Nemo","7777");
 
 Compte[] comptes=new Compte[10];
-comptes[0]= new Compte();
+comptes[0]= new Compte(444);
 comptes[0].setTitular(clients[0]);
-comptes[1]=new Compte();
+comptes[1]=new Compte(777);
 comptes[1].setTitular(clients[0]);
 
-comptes[2]=new Compte();
+comptes[2]=new Compte(744);
 comptes[2].setTitular(clients[1]);
-comptes[3]=new Compte();
+comptes[3]=new Compte(544);
 comptes[3].setTitular(clients[1]);
 
-comptes[4]=new Compte();
+comptes[4]=new Compte(822);
 comptes[4].setTitular(clients[2]);
-comptes[5]=new Compte();
+comptes[5]=new Compte(1000);
 comptes[5].setTitular(clients[2]);
 
-comptes[6]=new Compte();
+comptes[6]=new Compte(300);
 comptes[6].setTitular(clients[3]);
-comptes[7]=new Compte();
+comptes[7]=new Compte(500);
 comptes[7].setTitular(clients[3]);
 
-comptes[8]=new Compte();
+comptes[8]=new Compte(200);
 comptes[8].setTitular(clients[4]);
-comptes[9]=new Compte();
+comptes[9]=new Compte(100);
 comptes[9].setTitular(clients[4]);
 
 for(Client cli: clients){

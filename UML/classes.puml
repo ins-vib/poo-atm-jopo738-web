@@ -19,10 +19,10 @@ class Client {
 
 }
 
-class compte {
+class Compte {
     - numero: String
     - saldo: double
-    - titular: String
+    - titular: Client
     - interesAnual: double
     {static} - comptador: int
     {static} - prefix: String
@@ -44,5 +44,7 @@ class compte {
     + getTitular(): String
     + getInteresAnual(): double
 }
+
+Client "1" -- "1..*" Compte : Titular
 
 @enduml
