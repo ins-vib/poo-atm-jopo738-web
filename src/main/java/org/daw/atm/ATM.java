@@ -68,7 +68,9 @@ public class ATM {
 
     client1.setDni("8754962148"); //error
     client1.setDni("39955738T"); //correcte
-    client1.setDni("39955738L");
+    client1.setDni("39955738L"); //error
+    client1.setDni("3995A7387"); //error
+
     
 
 
