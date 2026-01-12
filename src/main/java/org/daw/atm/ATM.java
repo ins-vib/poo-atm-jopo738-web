@@ -82,8 +82,49 @@ Client client2 = new Client("22222222Z","Jack","2222");
 Compte compte1 = new Compte();
 compte1.setTitular(client1);
 
+System.out.println(compte1.getNumero());
+System.out.println(compte1.getTitular().getNom());
+
+
 Compte compte2 = new Compte(1000);
 compte2.setTitular(client2);
+
+Client[] clients=new Client[5];
+clients[0]=new Client("33333333D","Anna","3333");
+clients[1]=new Client("44444444A","Josep","4444");
+clients[2]=new Client("55555555E","Jordi","5555");
+clients[3]=new Client("66666666V","Jaume","6666");
+clients[4]=new Client("77777777N","Nemo","7777");
+
+Compte[] comptes=new Compte[10];
+comptes[0]= new Compte();
+comptes[0].setTitular(clients[0]);
+comptes[1]=new Compte();
+comptes[1].setTitular(clients[0]);
+
+comptes[2]=new Compte();
+comptes[2].setTitular(clients[1]);
+comptes[3]=new Compte();
+comptes[3].setTitular(clients[1]);
+
+comptes[4]=new Compte();
+comptes[4].setTitular(clients[2]);
+comptes[5]=new Compte();
+comptes[5].setTitular(clients[2]);
+
+comptes[6]=new Compte();
+comptes[6].setTitular(clients[3]);
+comptes[7]=new Compte();
+comptes[7].setTitular(clients[3]);
+
+comptes[8]=new Compte();
+comptes[8].setTitular(clients[4]);
+comptes[9]=new Compte();
+comptes[9].setTitular(clients[4]);
+
+for(Client cli: clients){
+    System.out.println(cli.getNom());
+}
 }
 
 }
