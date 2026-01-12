@@ -7,10 +7,18 @@ public class Client {
     private int intentsFallits;
     private boolean bloquejat;
 
+    public Client (){
+        
+    }
+
     public Client(String dni, String nom, String pin) {
-        this.dni = dni;
+        //this.dni = dni;
         this.nom = nom;
-        this.pin = pin;
+        //this.pin = pin;
+        this.setPin(pin);
+        this.setDni(dni);
+        this.bloquejat=false;
+        this.intentsFallits=0;
     }
 
     public String getDni() {
@@ -37,44 +45,53 @@ public class Client {
         if (dni == null || dni.length() != 9){
             throw new IllegalArgumentException("El DNI ha de tenir 9 caràcters");
         }
+
+        if (dni == null ){
+            throw new IllegalArgumentException("El DNI no pot ser null");
+        }
+
         //"11111111A"
         //substring(0,8)  "11111111"
         String nums= dni.substring(0,8);
-        char lletra = dni.charAt(8);
+        char lletra = Character.toUpperCase(dni.charAt(8));
         //this.dni = dni;
-
+        int numero;
         try {
-          int numero= Integer.parseInt(nums);
-          String lletres = "TRWAGMYPDXBNJZSQVHLCKE";
+          numero= Integer.parseInt(nums);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("Els primers 8 caràcters han de ser números");
+        }
+
+        String lletres = "TRWAGMYPDXBNJZSQVHLCKE";
           char lletraCalculada=lletres.charAt(numero%23);  
           if(lletraCalculada!=lletra){
             throw new IllegalArgumentException("Lletra del DNI incorrecta");
           }
 
-          this.dni=dni;
-
-        } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("Els primers 8 caràcters han de ser números");
-        }
+        this.dni= dni.toUpperCase();
     }
 
     public void setNom(String nom) {
         this.nom = nom;
     }
 
-    public void setPin(String pin) throws Exception {
+    public void setPin(String pin) {
         //comprovar que PIN és correcte
         //número de 4 xiferes
+
+        if(pin==null) throw new IllegalArgumentException("El pin ha de tenir un valor");
+
+        if(pin.length()!=4) throw new IllegalArgumentException("Llargada pin incorrecte");
+
         try {
-            if(pin.length()!=4) throw new Exception("Llargada pin incorrecta");
-            int num=Integer.parseInt(pin); //agafa un String i el converteix a integer ("1234"--> 1234) o ("123A"-->genera exception)
             
+            int num=Integer.parseInt(pin); //agafa un String i el converteix a integer ("1234"--> 1234) o ("123A"-->genera exception)
             this.pin= pin;
-        } catch (Exception e) {
-            throw new Exception("Pin incorrecte");
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("Pin incorrecte");
         }
         
-        this.pin = pin;
+        //this.pin = pin;
     }
     public void resetIntents (){
         this.intentsFallits=0;

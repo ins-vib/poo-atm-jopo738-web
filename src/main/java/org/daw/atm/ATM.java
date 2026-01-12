@@ -51,25 +51,29 @@ public class ATM {
     System.out.println("saldo del compte 1: "+c1.getSaldo());
     
 
-    Client client1= new Client("39955738T", "Joan", "1534");
+    Client client11= new Client("39955738T", "Joan", "1534");
     Client client2= new Client("258741Y", "anna", "15487");
 
     try{
+  Client client1= new Client("11111111A", "Joan", "1534");       
  client1.setPin("15344");
     }      
-    catch(Exception e){
+catch(Exception e){
+        System.out.println(e.getMessage());
 
     }
 
+
     client2.comprovarPin("15489");
-    client1.comprovarPin("3415");
+    client11.comprovarPin("3415");
     client2.comprovarPin("78945");
     client2.comprovarPin("879854");
 
-    client1.setDni("8754962148"); //error
-    client1.setDni("39955738T"); //correcte
-    client1.setDni("39955738L"); //error
-    client1.setDni("3995A7387"); //error
+    client11.setDni("8754962148"); //error
+    client11.setDni("39955738T"); //correcte
+    client11.setDni("39955738L"); //error
+    client11.setDni("3995A7387"); //error
+    
 
     
 
