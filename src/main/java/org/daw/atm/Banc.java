@@ -1,0 +1,63 @@
+package org.daw.atm;
+
+public class Banc {
+    
+    private String nom;
+    private Client[] clients;  // posem el [] perque pot teneir un o mes clients  // aixo crea una taula clients que no te res assignat valor nul
+    private Compte[] comptes;
+
+    public Banc(String nom) {
+        this.nom = nom;
+
+        clients=new Client[5]; //clients tenia un valor nul, pero ara li hem assignat un array de 5
+
+        clients[0]=new Client("33333333D","Anna","3333");  // dins array de clients li assignem un client amb les seves dades
+        clients[1]=new Client("44444444A","Josep","4444");
+        clients[2]=new Client("55555555E","Jordi","5555");
+        clients[3]=new Client("66666666V","Jaume","6666");
+        clients[4]=new Client("77777777N","Nemo","7777");
+
+        comptes=new Compte[10];
+        comptes[0]= new Compte(100);
+        comptes[0].setTitular(clients[0]);
+        comptes[1]=new Compte(100);
+        comptes[1].setTitular(clients[0]);
+        comptes[2]=new Compte(100);
+        comptes[2].setTitular(clients[1]);
+        comptes[3]=new Compte(100);
+        comptes[3].setTitular(clients[1]);
+        comptes[4]=new Compte(100);
+        comptes[4].setTitular(clients[2]);
+        comptes[5]=new Compte(100);
+        comptes[5].setTitular(clients[2]);
+        comptes[6]=new Compte(100);
+        comptes[6].setTitular(clients[3]);
+        comptes[7]=new Compte(100);
+        comptes[7].setTitular(clients[3]);
+        comptes[8]=new Compte(100);
+        comptes[8].setTitular(clients[4]);
+        comptes[9]=new Compte(100);
+        comptes[9].setTitular(clients[4]);
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    
+
+    public boolean validar(String dni, String pin){
+
+        
+    
+        if(clients.equals(dni)&&clients.equals(pin)){
+            return true;
+        }
+
+        return false;
+    }
+
+   
+
+
+}

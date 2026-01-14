@@ -47,4 +47,14 @@ class Compte {
 
 Client "1" -- "1..*" Compte : Titular
 
+
+class Banc {
+    + nom: String
+
+}
+
+Banc "*" --> "*" Client : tenir
+Banc "1" -->"*" Compte: pertany
+
+
 @enduml
