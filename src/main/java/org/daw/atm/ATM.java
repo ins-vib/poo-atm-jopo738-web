@@ -131,6 +131,11 @@ compte2.setTitular(client2);
 // }
 
 Banc banc= new Banc("Banc DAW");
+Client cli= banc.validar("33333333D", "3333");
+if(cli!=null){
+    System.out.println("Client validat!!!");
+    System.out.println(cli.getNom());
+}
 
 
 

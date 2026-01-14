@@ -100,15 +100,21 @@ public class Client {
 
     
     public boolean comprovarPin (String pinIntroduit){
+
+        // si el client ja està bloquejat, no permetre validació
         if(this.bloquejat){
             return false;
         }
+
+        //PIN correcte
         if(pinIntroduit.equals(this.pin)){
-            resetIntents();
+            resetIntents();   // reinici d'intents
             return true;
-        }else{
-            intentsFallits++;
-            if(intentsFallits==3){
+        }
+        
+        //PIN incorrecte
+            this.intentsFallits++;
+            if(this.intentsFallits>=3){    
                 this.bloquejat=true;
 
             }
@@ -123,4 +129,4 @@ public class Client {
 
 
     
-}
+

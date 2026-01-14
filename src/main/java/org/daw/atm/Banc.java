@@ -46,15 +46,19 @@ public class Banc {
 
     
 
-    public boolean validar(String dni, String pin){
+    public Client validar(String dni, String pin){
 
-        
-    
-        if(clients.equals(dni)&&clients.equals(pin)){
-            return true;
+        for(Client cli: this.clients){
+
+            if(cli.getDni().equals(dni)){
+
+                if(cli.comprovarPin(pin)){
+                    return cli;
+                }
+                return null;
         }
-
-        return false;
+        }
+        return null;
     }
 
    

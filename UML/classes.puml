@@ -50,6 +50,7 @@ Client "1" -- "1..*" Compte : Titular
 
 class Banc {
     + nom: String
+    + validar (dni: String, pin:String)
 
 }
 
