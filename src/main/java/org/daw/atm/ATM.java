@@ -11,6 +11,24 @@ package org.daw.atm;
 public class ATM {
 
     public static void main(String[] args) {
+
+        
+        CompteCorrent cc = new CompteCorrent();   // al no tenir cap constructor hereda el del seu pare, si tingues constructor faria servir el seu
+        System.out.println(cc.getNumero());
+        cc.ingressar(400);       // aixo es el polimorfisme
+        //cc.setLimitDescobert(100);
+        cc.retirar(450);
+        System.out.println(cc.getSaldo());
+        System.out.println(cc); // això és el toString 
+
+
+        CompteCorrent cc2 = new CompteCorrent(100,500);   // al no tenir cap constructor hereda el del seu pare, si tingues constructor faria servir el seu
+        System.out.println(cc2.getNumero());
+        cc2.ingressar(400);       // aixo es el polimorfisme
+        //cc.setLimitDescobert(100);
+        cc.retirar(1001); // NO PUC!!
+        System.out.println(cc2.getSaldo());
+        System.out.println(cc2);
        
         //System.out.println(Compte.comptador);
         //Compte.comptador++;

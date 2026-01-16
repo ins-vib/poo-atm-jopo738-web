@@ -3,14 +3,14 @@ package org.daw.atm;
 public class Compte {
     
     // Atributs    // si no hi ha res escrit es "public"
-    private String numero;
-    private double saldo;
-    private Client titular;
-    private double interesAnual;
+    protected String numero;  // el protected el que fa es que son privats per a tothom menys per els fills
+    protected double saldo;
+    protected Client titular;
+    protected double interesAnual;
     
     // perque sigui un atribut que comparteixen tots els objectes que siguin de la classe ("compte" en aquest cas) hem de posar static
     private static int comptador=1;
-    private static final String prefix="ES100-1111-"; // es posa el final perque aquest valor que li he posat inicialment ja no es pugui canviar i sempre tingui el mateix valor
+    private static final String prefix="ES100-1111-"; // es posa el "final" perque aquest valor que li he posat inicialment ja no es pugui canviar i sempre tingui el mateix valor
 
 
     // el constructor s'ha de dir igual que el public class
@@ -100,6 +100,16 @@ public class Compte {
     public void setTitular(Client titular) {
         this.titular = titular;
     }
+
+
+
+    @Override  // serveix per sobreescriure i ens indica que està sobreescrivint
+    public String toString() {  // en aquest cas com no te cap pare el que sobreescriu és el object que és la classe que es la major (es crea sempre)
+        return "Compte [numero=" + numero + ", saldo=" + saldo + ", titular=" + titular + ", interesAnual="
+                + interesAnual + "]";
+    }
+
+    
 
     
 
