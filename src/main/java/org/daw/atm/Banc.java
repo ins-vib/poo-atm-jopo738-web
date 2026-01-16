@@ -18,25 +18,34 @@ public class Banc {
         clients[4]=new Client("77777777N","Nemo","7777");
 
         comptes=new Compte[10];
-        comptes[0]= new Compte(100);
+        comptes[0]= new CompteCorrent(200,100); // ens permet ficar "new CompteCorrent" perque és fill sinó no ens deixaria
         comptes[0].setTitular(clients[0]);
-        comptes[1]=new Compte(100);
+
+        comptes[1]= new CompteEstalvi(1000,300);
         comptes[1].setTitular(clients[0]);
-        comptes[2]=new Compte(100);
+
+        comptes[2]=new CompteCorrent(200,100);
         comptes[2].setTitular(clients[1]);
-        comptes[3]=new Compte(100);
+
+        comptes[3]=new CompteEstalvi(1000,300);
         comptes[3].setTitular(clients[1]);
-        comptes[4]=new Compte(100);
+
+        comptes[4]=new CompteCorrent(200,100);
         comptes[4].setTitular(clients[2]);
-        comptes[5]=new Compte(100);
+
+        comptes[5]=new CompteEstalvi(1000,300);
         comptes[5].setTitular(clients[2]);
-        comptes[6]=new Compte(100);
+
+        comptes[6]=new CompteCorrent(200,100);
         comptes[6].setTitular(clients[3]);
-        comptes[7]=new Compte(100);
+
+        comptes[7]=new CompteEstalvi(1000,300);
         comptes[7].setTitular(clients[3]);
-        comptes[8]=new Compte(100);
+
+        comptes[8]=new CompteCorrent(200,100);
         comptes[8].setTitular(clients[4]);
-        comptes[9]=new Compte(100);
+
+        comptes[9]=new CompteEstalvi(1000,300);
         comptes[9].setTitular(clients[4]);
     }
 

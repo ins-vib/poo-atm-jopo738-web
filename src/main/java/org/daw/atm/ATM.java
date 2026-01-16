@@ -20,6 +20,7 @@ public class ATM {
         cc.retirar(450);
         System.out.println(cc.getSaldo());
         System.out.println(cc); // això és el toString 
+        
 
 
         CompteCorrent cc2 = new CompteCorrent(100,500);   // al no tenir cap constructor hereda el del seu pare, si tingues constructor faria servir el seu

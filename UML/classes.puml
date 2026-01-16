@@ -20,10 +20,10 @@ class Client {
 }
 
 class Compte {
-    - numero: String
-    - saldo: double
-    - titular: Client
-    - interesAnual: double
+    # numero: String
+    # saldo: double
+    # titular: Client
+    # interesAnual: double
     {static} - comptador: int
     {static} - prefix: String
 
@@ -45,7 +45,7 @@ class Compte {
     + getInteresAnual(): double
 }
 
-Client "1" -- "1..*" Compte : Titular
+Client "1" --> "1..*" Compte : Titular
 
 
 class Banc {
@@ -56,6 +56,32 @@ class Banc {
 
 Banc "*" --> "*" Client : tenir
 Banc "1" -->"*" Compte: pertany
+
+class CompteCorrent extends Compte{
+    - limitDescobert: double
+    + retirar (quantitat:double)
+
+    + CompteCorrent()
+    + CompteCorrent(limitDescobert: double, saldo: double)
+
+    + getLimitDescobert(): double
+    + setLimitDescobert(limitDescobert:double)
+    
+
+}
+
+class CompteEstalvi extends Compte{
+    - saldoMinim: double
+    + retirar (quantitat: double)
+
+    + CompteEstalvi()
+    + CompteEstalvi(saldoMinim:double, saldo: double)
+
+    + getSaldoMinim(): double
+    + setSaldoMinim(saldoMinim: double)
+}
+
+
 
 
 @enduml
