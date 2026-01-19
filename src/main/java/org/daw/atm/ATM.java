@@ -4,6 +4,8 @@
 
 package org.daw.atm;
 
+import java.util.Scanner;
+
 /**
  *
  * @author jpome
@@ -12,24 +14,50 @@ public class ATM {
 
     public static void main(String[] args) {
 
+        Scanner teclat= new Scanner(System.in);
+        Caixer caixer = new Caixer();
+        String dni,PIN;
         
-        CompteCorrent cc = new CompteCorrent();   // al no tenir cap constructor hereda el del seu pare, si tingues constructor faria servir el seu
-        System.out.println(cc.getNumero());
-        cc.ingressar(400);       // aixo es el polimorfisme
-        //cc.setLimitDescobert(100);
-        cc.retirar(450);
-        System.out.println(cc.getSaldo());
-        System.out.println(cc); // això és el toString 
+        System.out.println("entra el teu DNI: ");
+        dni= teclat.next();
+        System.out.println("Entra el teu PIN: ");
+        PIN= teclat.next();
+        
+        boolean correcte = caixer.login(dni, PIN);
+        
+        //Fins que no sigui correcte demanar dades
+
+        while(correcte==false){
+            System.out.println("entra el teu DNI: ");
+            dni= teclat.next();
+            System.out.println("Entra el teu PIN: ");
+            PIN= teclat.next();
+            correcte = caixer.login(dni, PIN);
+        }
+
+
+
+
+
+
+
+        // CompteCorrent cc = new CompteCorrent();   // al no tenir cap constructor hereda el del seu pare, si tingues constructor faria servir el seu
+        // System.out.println(cc.getNumero());
+        // cc.ingressar(400);       // aixo es el polimorfisme
+        // //cc.setLimitDescobert(100);
+        // cc.retirar(450);
+        // System.out.println(cc.getSaldo());
+        // System.out.println(cc); // això és el toString 
         
 
 
-        CompteCorrent cc2 = new CompteCorrent(100,500);   // al no tenir cap constructor hereda el del seu pare, si tingues constructor faria servir el seu
-        System.out.println(cc2.getNumero());
-        cc2.ingressar(400);       // aixo es el polimorfisme
-        //cc.setLimitDescobert(100);
-        cc.retirar(1001); // NO PUC!!
-        System.out.println(cc2.getSaldo());
-        System.out.println(cc2);
+        // CompteCorrent cc2 = new CompteCorrent(100,500);   // al no tenir cap constructor hereda el del seu pare, si tingues constructor faria servir el seu
+        // System.out.println(cc2.getNumero());
+        // cc2.ingressar(400);       // aixo es el polimorfisme
+        // //cc.setLimitDescobert(100);
+        // cc.retirar(1001); // NO PUC!!
+        // System.out.println(cc2.getSaldo());
+        // System.out.println(cc2);
        
         //System.out.println(Compte.comptador);
         //Compte.comptador++;
@@ -95,18 +123,18 @@ public class ATM {
     
 
     
-Client client1 = new Client("11111111L","Joan","1111");
-Client client2 = new Client("22222222Z","Jack","2222");
+// Client client1 = new Client("11111111L","Joan","1111");
+// Client client2 = new Client("22222222Z","Jack","2222");
 
-Compte compte1 = new Compte();
-compte1.setTitular(client1);
+// Compte compte1 = new Compte();
+// compte1.setTitular(client1);
 
-System.out.println(compte1.getNumero());
-System.out.println(compte1.getTitular().getNom());
+// System.out.println(compte1.getNumero());
+// System.out.println(compte1.getTitular().getNom());
 
 
-Compte compte2 = new Compte(1000);
-compte2.setTitular(client2);
+// Compte compte2 = new Compte(1000);
+// compte2.setTitular(client2);
 
 // Client[] clients=new Client[5];
 // clients[0]=new Client("33333333D","Anna","3333");
@@ -150,11 +178,13 @@ compte2.setTitular(client2);
 // }
 
 Banc banc= new Banc("Banc DAW");
-Client cli= banc.validar("33333333D", "3333");
-if(cli!=null){
-    System.out.println("Client validat!!!");
-    System.out.println(cli.getNom());
-}
+// Client cli= banc.validar("33333333D", "3333");
+// if(cli!=null){
+//     System.out.println("Client validat!!!");
+//     System.out.println(cli.getNom());
+// }
+
+banc.mostrarComptes();
 
 
 

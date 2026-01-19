@@ -45,7 +45,7 @@ public class Banc {
         comptes[8]=new CompteCorrent(200,100);
         comptes[8].setTitular(clients[4]);
 
-        comptes[9]=new CompteEstalvi(1000,300);
+        comptes[9]=new Compte();
         comptes[9].setTitular(clients[4]);
     }
 
@@ -68,6 +68,23 @@ public class Banc {
         }
         }
         return null;
+    }
+
+    public void mostrarComptes(){
+        for(Compte c: this.comptes){
+            //c.set   // si intentem entrar a setsaldominim no ens deix ja que aquest atribut només es troba a comptes estalvi, pertnat no ho podem fer de manera directa, però si de manera indirecta
+            System.out.println(c);
+        }
+    }
+
+    public void IncrementarSaldoMinimComptesEstalvi(){   // aquesta és la manera de fer, de manera indirecta  (aixo ho fem servir per metodes exclusius)
+        for(Compte c: this.comptes){
+            if(c instanceof CompteEstalvi){ // pregunta a c si el tipus es de CompteEstalvi amb el instanceof amb el "instanceof" podem veure quin tipude variable és
+                CompteEstalvi ce = (CompteEstalvi)c;    // li estem dient que aquest ompte amb la (c) és un CompteEstalvi li diem perque hem posat CompteEstalvi i al costat del parentesi la "c"
+                ce.setSaldoMinim(ce.getSaldoMinim()+1000);
+
+            }
+        }
     }
 
    
