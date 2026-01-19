@@ -1,4 +1,5 @@
 @startuml
+
 class Client {
     - dni: String
     - nom: String
@@ -80,6 +81,21 @@ class CompteEstalvi extends Compte{
     + getSaldoMinim(): double
     + setSaldoMinim(saldoMinim: double)
 }
+
+class Caixer{
+    - banc: Banc
+    - client: Client
+
+    + login(dni: string)
+    + treure()
+    + ingressar()
+    + mostrarSaldo()
+    + logout()
+}
+
+Caixer "*" -->"1" Banc: és
+Caixer "1" -->"1" Client: connectat
+
 
 
 

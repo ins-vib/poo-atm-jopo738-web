@@ -20,5 +20,24 @@ public class Caixer {
         
     }
 
+    public boolean ingresar (String numero, double quantitat){   // aixo ho fem per cridar el metode ingressar del banc
+
+
+        if(clientConnectat==null)return false;
+        return banc.ingressarCompte(numero, quantitat);
+
+    }
+
+    public boolean retirar (String numero, double quantitat){   // aixo ho fem per cridar el metode retirar del banc
+        
+
+
+        if(clientConnectat==null)return false;
+        return banc.retirarCompte(numero, quantitat);
+
+    }
+
+
+
 
 }

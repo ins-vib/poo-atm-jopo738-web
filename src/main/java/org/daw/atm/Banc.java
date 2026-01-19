@@ -87,6 +87,32 @@ public class Banc {
         }
     }
 
+    public boolean ingressarCompte(String numero, double quantitat){
+
+
+        for(Compte c: comptes) {   // si no troba compte retorna false
+            if(c.numero.equals(numero)){
+                c.ingressar(quantitat); // reutilitzem el ingressar
+                return true;
+
+            }
+        }
+        return false;
+    }
+
+    public boolean retirarCompte(String numero, double quantitat){
+
+
+        for(Compte c: comptes) {   // si no troba compte retorna false
+            if(c.numero.equals(numero)){
+                c.retirar(quantitat); // reutilitzem el retirar
+                return true;
+
+            }
+        }
+        return false;
+    }
+
    
 
 

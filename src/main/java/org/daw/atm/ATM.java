@@ -24,7 +24,6 @@ public class ATM {
         PIN= teclat.next();
         
         boolean correcte = caixer.login(dni, PIN);
-        
         //Fins que no sigui correcte demanar dades
 
         while(correcte==false){
@@ -34,6 +33,33 @@ public class ATM {
             PIN= teclat.next();
             correcte = caixer.login(dni, PIN);
         }
+        //menu opcions disponibles...
+
+        int opcio=-1;
+
+        switch(opcio=!4){
+
+            case 1:
+                System.out.println("entra la quantitat a ingressar:");
+                double quantitat=teclat.nextDouble();
+                System.out.println();
+
+        }
+
+
+
+
+        //pregunta per teclat
+        double quantitat=100;
+        String numero= "ES100-1111-1";
+        caixer.ingresar(numero, quantitat);
+
+        caixer.ingresar(numero, quantitat);
+
+        caixer.retirar(numero, quantitat); // implementar
+        // només es pot retirar d'un compte que pertanyi al client!!
+        
+        
 
 
 
