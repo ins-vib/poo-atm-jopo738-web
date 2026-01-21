@@ -113,6 +113,33 @@ public class Banc {
         return false;
     }
 
+    public boolean transfarenciaCompte (String numero, double quantitat, String dni, String PIN, String numero2){
+        if(validar(dni, PIN)==null)return false;
+        boolean trobat=false;
+        for(Compte c: comptes){
+            if(c.numero.equals(numero)){
+                trobat=true;
+
+            }
+        }
+    }
+
+    public void mostrarComptesClient(String dni){
+        boolean teComptes = false;
+        for(Compte c: this.comptes){
+            if(c != null && c.getTitular() != null){
+                if(c.getTitular().getDni().equals(dni))
+                System.out.println(c.toString());
+                teComptes = true;
+            }
+        }
+        if(!teComptes){
+            System.out.println("Aquest client no té comptes!!");
+        }
+
+        
+    }
+
    
 
 

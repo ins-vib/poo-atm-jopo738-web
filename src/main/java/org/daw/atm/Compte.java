@@ -1,5 +1,7 @@
 package org.daw.atm;
 
+import java.util.ArrayList;
+
 public class Compte {
     
     // Atributs    // si no hi ha res escrit es "public"
@@ -7,12 +9,13 @@ public class Compte {
     protected double saldo;
     protected Client titular;
     protected double interesAnual;
+    private ArrayList<Moviment> moviments = new ArrayList<>();
     
     // perque sigui un atribut que comparteixen tots els objectes que siguin de la classe ("compte" en aquest cas) hem de posar static
     private static int comptador=1;
     private static final String prefix="ES100-1111-"; // es posa el "final" perque aquest valor que li he posat inicialment ja no es pugui canviar i sempre tingui el mateix valor
 
-
+    
     // el constructor s'ha de dir igual que el public class
     public Compte() {
         //numero = "ES100-1111-"+comptador; //per convertir un numero  a un string posem el (""+)
@@ -107,6 +110,13 @@ public class Compte {
     public String toString() {  // en aquest cas com no te cap pare el que sobreescriu és el object que és la classe que es la major (es crea sempre)
         return "Compte [numero=" + numero + ", saldo=" + saldo + ", titular=" + titular + ", interesAnual="
                 + interesAnual + "]";
+    }
+
+
+    public void mostrarMoviments(){
+        for(Moviment s: moviments){
+            System.out.println(s);
+        }
     }
 
     

@@ -35,16 +35,58 @@ public class ATM {
         }
         //menu opcions disponibles...
 
-        int opcio=-1;
+        int opcio = 0;
+    String numeroCompte = "ES100-1111-1"; // Idealmente esto vendría de una lista del cliente
 
-        switch(opcio=!4){
+    while (opcio != 4) {
+        System.out.println("\n--- MENÚ PRINCIPAL ---");
+        System.out.println("1. Veure els meus comptes");
+        System.out.println("1. Ingressar diners");
+        System.out.println("2. Retirar diners");
+        System.out.println("3. Consultar saldo");
+        System.out.println("4. Sortir");
+        System.out.print("Selecciona una opció: ");
+        
+        opcio = teclat.nextInt();
+
+        switch (opcio) {
 
             case 1:
-                System.out.println("entra la quantitat a ingressar:");
-                double quantitat=teclat.nextDouble();
-                System.out.println();
+                
+                System.out.println("\n--- ELS TEUS COMPTES ---");
+                this.banc.mostrarComptesClient();
+                break;
 
+            case 2:
+                System.out.print("Entra la quantitat a ingressar: ");
+                double qIngres = teclat.nextDouble();
+                caixer.ingresar(numeroCompte, qIngres);
+                System.out.println("Ingrés realitzat correctament.");
+                break;
+
+            case 3:
+                System.out.print("Entra la quantitat a retirar: ");
+                double qRetirada = teclat.nextDouble();
+                caixer.retirar(numeroCompte, qRetirada);
+                break;
+
+            case 4:
+                
+                System.out.println("Consulta de saldo seleccionada.");
+                // falta 
+                break;
+
+            case 5:
+                System.out.println("Gràcies per fer servir el caixer. Adeu!");
+                break;
+
+            default:
+                System.out.println("Opció no vàlida.");
+                break;
         }
+    }
+    teclat.close();
+
 
 
 
@@ -215,10 +257,11 @@ banc.mostrarComptes();
 
 
 }
-
-
-
 }
+
+
+
+
    
 
     
