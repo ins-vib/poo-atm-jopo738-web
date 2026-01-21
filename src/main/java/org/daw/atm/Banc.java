@@ -115,13 +115,10 @@ public class Banc {
 
     public boolean transfarenciaCompte (String numero, double quantitat, String dni, String PIN, String numero2){
         if(validar(dni, PIN)==null)return false;
-        boolean trobat=false;
-        for(Compte c: comptes){
-            if(c.numero.equals(numero)){
-                trobat=true;
-
-            }
-        }
+        Compte origen = cercarCompte(numero);
+        Compte desti = cercarCompte(numero2);
+        if(origen != null && desti != null)return origen.transfarencia(desti, quantitat);
+        return false;
     }
 
     public void mostrarComptesClient(String dni){
@@ -139,6 +136,16 @@ public class Banc {
 
         
     }
+
+    public Compte cercarCompte(String num){
+        for(Compte c: comptes){
+            if(c != null && c.getNumero().equals(num)) return c;
+
+        }
+        return null;
+    }
+
+  
 
    
 
