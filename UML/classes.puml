@@ -1,5 +1,4 @@
 @startuml
-
 class Client {
     - dni: String
     - nom: String
@@ -35,6 +34,7 @@ class Compte {
     + ingressar(quantitat:double)
     + retirar(quantitat:double):boolean
     + transfarencia(desti:Compte,quantitat: double):boolean
+    + mostrarMoviments()
 
     + setNumero(numero: String)
     + setSaldo(saldo: double)
@@ -93,11 +93,16 @@ class Caixer{
     + logout()
 }
 
+class Moviment{
+    - Datahora: LocalDateTime
+    - tipus: String
+    - descripcio: String
+    - quantitat: double
+
+    + Moviment (tipus: String,descripcio: String,quantitat: double, Datahora: LocalDateTime)
+}
+Moviment "*"-->"1" Compte: moviments
+
 Caixer "*" -->"1" Banc: és
 Caixer "1" -->"1" Client: connectat
-
-
-
-
-
 @enduml
