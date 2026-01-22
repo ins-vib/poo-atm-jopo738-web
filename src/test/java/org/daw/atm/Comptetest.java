@@ -56,22 +56,52 @@ public class Comptetest {
 
     }
 
-    @Test
-    void testTranfarenciaCorrecte(){
+    
 
-    }
-
-    @Test
-    void testMovimentCorrecte(){
-
-    }
+    
 
     @Test
     void testTransfarenciaCorrecte(){
-        Compte compte=new Compte();
-
+        Compte origen = new Compte();
+        Compte desti = new Compte();
+        origen.setSaldo(100);
+        desti.setSaldo(50);
+        
+        
+        boolean resultat = origen.transferencia(desti, 30);
+        
+        assertTrue(resultat);
+        assertEquals(70, origen.getSaldo());
+        assertEquals(80, desti.getSaldo());
         
 
+    }
+
+    @Test
+    void testCalculaInteresAnual() {
+        Compte compte = new Compte();
+        compte.setSaldo(1000);
+        compte.setInteresAnual(5); 
+        
+        
+        double resultat = compte.calculaInteresAnual();
+        
+        assertEquals(1050, resultat);
+        assertEquals(1050, compte.getSaldo());
+    }
+
+    @Test
+    void testIngressarMoviment() {
+        Compte compte = new Compte();
+        compte.setSaldo(100);
+        
+        
+        compte.ingressar(50);
+        
+        assertEquals(150, compte.getSaldo());
+        
+        assertEquals(1, compte.getMoviments().size());
+        assertEquals(TipusMoviment.INGRES, compte.getMoviments().get(0).getTipus());
     }
     
 }

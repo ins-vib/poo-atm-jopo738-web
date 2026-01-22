@@ -140,6 +140,18 @@ public class Caixer {
         }
     }
 
+    public Banc getBanc(){
+        return this.banc;
+    }
+
+    public Client getClientConnectat(){
+        return this.clientConnectat;
+    }
+
+    public void logout(){
+        this.clientConnectat= null;
+    }
+
 
 
 

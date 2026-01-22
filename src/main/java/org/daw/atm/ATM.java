@@ -30,12 +30,98 @@ public class ATM {
 
         while(correcte==false){
             System.out.println("entra el teu DNI: ");
-            dni= teclat.next();
+            dni= teclat.nextLine();
             System.out.println("Entra el teu PIN: ");
-            PIN= teclat.next();
+            PIN= teclat.nextLine();
             correcte = caixer.login(dni, PIN);
         }
         //menu opcions disponibles...
+
+        int opcio=0;
+        Banc bancActual = caixer.getBanc();
+                while(opcio != 6){
+                    System.out.println("MENU PRINCIPAL: ");
+                    System.out.println("1. veure els meus comptes");
+                    System.out.println("2. consultar saldo");
+                    System.out.println("3. ingressar diners");
+                    System.out.println("4. retirar diners");
+                    System.out.println("5. fer una transferència");
+                    System.out.println("6. sortir");
+                    System.out.println("selecciona una opció: ");
+
+                    try {
+        String entrada = teclat.nextLine(); 
+        if (entrada.isEmpty()) continue;   
+        opcio = Integer.parseInt(entrada);  
+    } catch (NumberFormatException e) {
+        System.out.println("ERROR: Has d'escriure un NÚMERO (1-6)");
+        continue; 
+    }
+
+                    switch(opcio){
+                        case 1:
+                            bancActual.mostrarComptesClient(caixer.getClientConnectat().getDni());
+                            break;
+                        case 2: 
+                            System.out.println("entra el numero del compte: ");
+                            String n2= teclat.nextLine();
+                            Compte c2=bancActual.cercarCompte(n2);
+                            if(c2 != null){
+                                System.out.println("saldo actual: "+ c2.getSaldo());
+                            }else{
+                                System.out.println("compte no trobat");
+                            }
+                            break;
+                        case 3:
+                            System.out.println("numero de compte: ");
+                            String c3= teclat.nextLine();
+                            System.out.println("quantitat a ingressar: ");
+                            double q4= Double.parseDouble(teclat.nextLine());
+                            if(bancActual.ingressarCompte(c3, q4)){
+                                System.out.println("ingres realitzat");
+
+                            }else{
+                                System.out.println("error");
+                            }
+                            break;
+                        case 4:
+                            System.out.println("numero de compte: ");
+                            String c4= teclat.nextLine();
+                            System.out.println("quantitat a retirar: ");
+                            double q5= Double.parseDouble(teclat.nextLine());
+                            if(bancActual.retirarCompte(c4, q5)){
+                                System.out.println("retirada realitzada amb èxit");
+                            }else{
+                                System.out.println("saldo insuficient o limit superat ");
+                            }
+                            break;
+                        case 5:
+                            System.out.println("compte origen:");
+                            String co= teclat.nextLine();
+                            System.out.println("compte desti:");
+                            String cd= teclat.nextLine();
+                            System.out.println("import: ");
+                            double q6= Double.parseDouble(teclat.nextLine());
+                            System.out.println("confirma PIN: ");
+                            String pinc= teclat.nextLine();
+                            if(bancActual.transfarenciaCompte(co, q6, caixer.getClientConnectat().getDni(), pinc, cd)){
+                                System.out.println("Transfarència realitzada");
+                            }else{
+                                System.out.println("error a la transfarència");
+                            }
+                            break;
+                        case 6:
+                            caixer.logout();
+                            System.out.println("Sessió tancada");
+                            break;
+                        default:
+                            System.out.println("Opció no vàlida");
+
+
+                    }
+                }
+          
+
 
         
 
@@ -262,6 +348,7 @@ banc.mostrarComptes();
 
 }
 }
+
 
 
 
