@@ -36,9 +36,11 @@ public class Comptetest {
         assertFalse(resultat);
         assertEquals(100, compte.getSaldo());
 
-        // compte.getMoviments().size();
-        // compte.getMoviments().get(0).getQuantitat();
-        // compte.getMoviments().get(0).getTipusMoviments
+        assertEquals(1,compte.getMoviments().size());
+        assertEquals(50,compte.getMoviments().get(0).getQuantitat());
+        assertEquals(TipusMoviment.RETIRADA, compte.getMoviments().get(0).getTipus());
+
+        
 
 
     }

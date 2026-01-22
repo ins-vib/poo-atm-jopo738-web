@@ -68,7 +68,7 @@ public class Compte {
 
     public void ingressar (double quantitat){
      if(quantitat>0){
-        Moviment moviment = new Moviment("S'ha fet un ingrés", quantitat, "INGRES");
+        Moviment moviment = new Moviment("S'ha fet un ingrés", quantitat, TipusMoviment.INGRES);
         moviments.add(moviment);
         saldo=saldo+quantitat;
     }
@@ -77,7 +77,7 @@ public class Compte {
 
     public boolean retirar (double quantitat){ // posem un boolean per poder dir si la retirada es pot fer o no es pot fer
      if(saldo>=quantitat && quantitat>0){
-        Moviment moviment = new Moviment("S'ha fet una retirada", quantitat, "RETIRADA");
+        Moviment moviment = new Moviment("S'ha fet una retirada", quantitat, TipusMoviment.RETIRADA);
         moviments.add(moviment);
         saldo=saldo-quantitat;
         return true;

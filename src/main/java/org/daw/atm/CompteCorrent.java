@@ -32,7 +32,7 @@ public class CompteCorrent extends Compte{
         if(quantitat<=0) return false;
 
         if(saldo + limitDescobert>=quantitat){    // al saldo ens surt error perque al pare te el saldo private, per aixo posem el "getSaldo()", al posar protected si volem el podem treure com he fet
-        Moviment moviment = new Moviment("S'ha fet una retirada", quantitat, "RETIRADA");
+        Moviment moviment = new Moviment("S'ha fet una retirada", quantitat, TipusMoviment.RETIRADA);
         moviments.add(moviment);
         saldo= saldo-quantitat;
         return true;
