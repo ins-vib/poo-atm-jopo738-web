@@ -1,6 +1,7 @@
 package org.daw.atm;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
@@ -13,6 +14,61 @@ public class Comptetest {
         assertTrue(resultat);
         assertEquals(50, compte.getSaldo());
 
+
+    }
+
+    @Test
+    void testRetirarCorrecte2(){
+        Compte compte = new Compte();
+        compte.setSaldo(100);
+        boolean resultat=compte.retirar(100);
+        assertTrue(resultat);
+        assertEquals(0, compte.getSaldo());
+
+
+    }
+
+    @Test
+    void testRetirarQuantitatIncorrecte(){
+        Compte compte = new Compte();
+        compte.setSaldo(100);
+        boolean resultat=compte.retirar(-50);
+        assertFalse(resultat);
+        assertEquals(100, compte.getSaldo());
+
+        // compte.getMoviments().size();
+        // compte.getMoviments().get(0).getQuantitat();
+        // compte.getMoviments().get(0).getTipusMoviments
+
+
+    }
+
+    @Test
+    void testRetirarQuantitatIncorrecte2(){
+        Compte compte = new Compte();
+        compte.setSaldo(100);
+        boolean resultat=compte.retirar(101);
+        assertFalse(resultat);
+        assertEquals(-1, compte.getSaldo());
+
+
+    }
+
+    @Test
+    void testTranfarenciaCorrecte(){
+
+    }
+
+    @Test
+    void testMovimentCorrecte(){
+
+    }
+
+    @Test
+    void testTransfarenciaCorrecte(){
+        Compte compte=new Compte();
+
+        
 
     }
     

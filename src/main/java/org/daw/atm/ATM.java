@@ -14,6 +14,8 @@ public class ATM {
 
     public static void main(String[] args) {
 
+        
+
         Scanner teclat= new Scanner(System.in);
         Caixer caixer = new Caixer();
         String dni,PIN;

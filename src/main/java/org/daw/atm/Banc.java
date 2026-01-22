@@ -137,9 +137,9 @@ public class Banc {
         
     }
 
-    public Compte cercarCompte(String num){
+    public Compte cercarCompte(String dni){
         for(Compte c: comptes){
-            if(c != null && c.getNumero().equals(num)) return c;
+            if(c != null && c.getNumero().equals(dni)) return c;
 
         }
         return null;
