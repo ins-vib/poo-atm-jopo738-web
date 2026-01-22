@@ -1,7 +1,6 @@
 package org.daw.atm;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 
 public class Moviment {
     private LocalDateTime datahora;
@@ -30,18 +29,40 @@ public class Moviment {
         return sb.toString();
     }
 
-    public enum tipus {
-    INGRES,
-    RETIRADA,
-    TRANSFERENCIA
-}
+    
 
-public class Compte {
-    public double saldo;
-    public ArrayList<Moviment> moviments = new ArrayList<>();
+    public LocalDateTime getDatahora() {
+        return datahora;
+    }
+
+
+
+    public String getTipus() {
+        return tipus;
+    }
+
+
+
+    public String getDescripcio() {
+        return descripcio;
+    }
+
+
+
+    public double getQuantitat() {
+        return quantitat;
+    }
+
+
+
+
+
+
+
+
+
 
     
-}
 
 
 

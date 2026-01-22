@@ -9,7 +9,7 @@ public class Compte {
     protected double saldo;
     protected Client titular;
     protected double interesAnual;
-    private ArrayList<Moviment> moviments = new ArrayList<>();
+    protected ArrayList<Moviment> moviments = new ArrayList<>();  // el moviments que hi ha entre <> és el de la classe, el moviments del costat és el nom
     
     // perque sigui un atribut que comparteixen tots els objectes que siguin de la classe ("compte" en aquest cas) hem de posar static
     private static int comptador=1;
@@ -68,6 +68,8 @@ public class Compte {
 
     public void ingressar (double quantitat){
      if(quantitat>0){
+        Moviment moviment = new Moviment("S'ha fet un ingrés", quantitat, "INGRES");
+        moviments.add(moviment);
         saldo=saldo+quantitat;
     }
      
@@ -75,22 +77,35 @@ public class Compte {
 
     public boolean retirar (double quantitat){ // posem un boolean per poder dir si la retirada es pot fer o no es pot fer
      if(saldo>=quantitat && quantitat>0){
+        Moviment moviment = new Moviment("S'ha fet una retirada", quantitat, "RETIRADA");
+        moviments.add(moviment);
         saldo=saldo-quantitat;
         return true;
      }
      return false;
      
     }
-    public boolean transfarencia (Compte c,double quantitat){
-        if(saldo>=quantitat && quantitat>0){
-            this.retirar(quantitat);
-            c.ingressar(quantitat);
-        }
-        if (quantitat<=0){
+    // public boolean transfarencia (Compte c,double quantitat){
+    //     if(saldo>=quantitat && quantitat>0){
+    //         this.retirar(quantitat);
+    //         c.ingressar(quantitat);
+    //     }
+    //     if (quantitat<=0){
+    //         return false;
+    //     }
+    //     if(this.retirar(quantitat)){
+    //         c.ingressar(quantitat);
+    //         return true;
+    //     }
+    //     return false;
+    // }
+
+    public boolean transferencia (Compte desti, double quantitat){
+        if(quantitat<=0){
             return false;
         }
         if(this.retirar(quantitat)){
-            c.ingressar(quantitat);
+            desti.ingressar(quantitat);
             return true;
         }
         return false;
@@ -118,6 +133,12 @@ public class Compte {
             System.out.println(s);
         }
     }
+
+    public ArrayList<Moviment> getMoviments() {
+        return moviments;
+    }
+
+
 
     
 

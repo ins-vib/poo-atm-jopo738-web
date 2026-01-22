@@ -117,7 +117,7 @@ public class Banc {
         if(validar(dni, PIN)==null)return false;
         Compte origen = cercarCompte(numero);
         Compte desti = cercarCompte(numero2);
-        if(origen != null && desti != null)return origen.transfarencia(desti, quantitat);
+        if(origen != null && desti != null)return origen.transferencia(desti, quantitat);
         return false;
     }
 

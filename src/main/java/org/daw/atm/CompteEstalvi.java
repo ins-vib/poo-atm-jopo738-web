@@ -28,7 +28,10 @@ public class CompteEstalvi extends Compte {
         if(quantitat<=0) return false;
 
         if(saldo-saldoMinim>=quantitat){ 
-        saldo= saldo-quantitat;
+        
+        Moviment moviment = new Moviment("S'ha fet una retirada", quantitat, "RETIRADA");
+        moviments.add(moviment);
+            saldo= saldo-quantitat;
         return true;
      }
      return false;

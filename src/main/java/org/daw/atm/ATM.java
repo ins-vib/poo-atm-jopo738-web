@@ -54,7 +54,7 @@ public class ATM {
             case 1:
                 
                 System.out.println("\n--- ELS TEUS COMPTES ---");
-                this.banc.mostrarComptesClient();
+                //this.banc.mostrarComptesClient;
                 break;
 
             case 2:
