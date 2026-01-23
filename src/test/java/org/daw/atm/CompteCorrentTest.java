@@ -37,8 +37,11 @@ public class CompteCorrentTest {
         CompteCorrent cc= new CompteCorrent();
 
         try {
+
+            cc.setLimitDescobert(-10.0);
             
         } catch (IllegalArgumentException e) {
+            //ok
         }
 
         

@@ -1,6 +1,5 @@
-package org.daw;
+package org.daw.atm;
 
-import org.daw.atm.Client;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
@@ -118,7 +117,7 @@ public class ClientTest {
 
     }
 
-    
+
 
 
 }
