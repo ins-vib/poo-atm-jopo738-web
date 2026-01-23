@@ -87,9 +87,11 @@ public class ATM {
                         case 4:
                             System.out.println("numero de compte: ");
                             String c4= teclat.nextLine();
+                            System.out.println("entra DNI: ");
+                            String dni2= teclat.nextLine();
                             System.out.println("quantitat a retirar: ");
                             double q5= Double.parseDouble(teclat.nextLine());
-                            if(bancActual.retirarCompte(c4, q5)){
+                            if(bancActual.retirarCompte(c4, q5,dni2)){
                                 System.out.println("retirada realitzada amb èxit");
                             }else{
                                 System.out.println("saldo insuficient o limit superat ");
@@ -102,9 +104,8 @@ public class ATM {
                             String cd= teclat.nextLine();
                             System.out.println("import: ");
                             double q6= Double.parseDouble(teclat.nextLine());
-                            System.out.println("confirma PIN: ");
-                            String pinc= teclat.nextLine();
-                            if(bancActual.transfarenciaCompte(co, q6, caixer.getClientConnectat().getDni(), pinc, cd)){
+                            
+                            if(bancActual.transfarenciaCompte(co, q6, caixer.getClientConnectat().getDni(), cd)){
                                 System.out.println("Transfarència realitzada");
                             }else{
                                 System.out.println("error a la transfarència");
@@ -188,7 +189,7 @@ public class ATM {
 
         caixer.ingresar(numero, quantitat);
 
-        caixer.retirar(numero, quantitat); // implementar
+        //caixer.retirar(numero, quantitat); // implementar
         // només es pot retirar d'un compte que pertanyi al client!!
         
         

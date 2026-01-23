@@ -30,12 +30,12 @@ public class Caixer {
 
     }
 
-    public boolean retirar (String numero, double quantitat){   // aixo ho fem per cridar el metode retirar del banc
+    public boolean retirar (String numero, double quantitat,String dni){   // aixo ho fem per cridar el metode retirar del banc
         
 
 
         if(clientConnectat==null)return false;
-        return banc.retirarCompte(numero, quantitat);
+        return banc.retirarCompte(numero, quantitat,dni);
 
     }
 
@@ -103,9 +103,11 @@ public class Caixer {
                         case 4:
                             System.out.println("numero de compte: ");
                             String c4= teclat.nextLine();
+                            System.out.println("entra DNI: ");
+                            String dni= teclat.nextLine();
                             System.out.println("quantitat a retirar: ");
                             double q5= Double.parseDouble(teclat.nextLine());
-                            if(banc.retirarCompte(c4, q5)){
+                            if(banc.retirarCompte(c4, q5,dni)){
                                 System.out.println("retirada realitzada amb èxit");
                             }else{
                                 System.out.println("saldo insuficient o limit superat ");
@@ -118,9 +120,8 @@ public class Caixer {
                             String cd= teclat.nextLine();
                             System.out.println("import: ");
                             double q6= Double.parseDouble(teclat.nextLine());
-                            System.out.println("confirma PIN: ");
-                            String pinc= teclat.nextLine();
-                            if(banc.transfarenciaCompte(co, q6, clientConnectat.getDni(), pinc, cd)){
+                            
+                            if(banc.transfarenciaCompte(co, q6, clientConnectat.getDni(), cd)){
                                 System.out.println("Transfarència realitzada");
                             }else{
                                 System.out.println("error a la transfarència");

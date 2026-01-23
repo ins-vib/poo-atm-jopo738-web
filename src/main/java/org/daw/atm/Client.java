@@ -45,9 +45,6 @@ public class Client {
         if (dni == null || dni.length() != 9){
             throw new IllegalArgumentException("El DNI ha de tenir 9 caràcters");
         }
-
-      
-
         //"11111111A"
         //substring(0,8)  "11111111"
         String nums= dni.substring(0,8);
@@ -70,6 +67,8 @@ public class Client {
 
         this.dni= dni.toUpperCase();
     }
+
+    
 
     public void setNom(String nom) {
         this.nom = nom;

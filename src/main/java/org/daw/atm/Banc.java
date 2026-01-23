@@ -87,38 +87,32 @@ public class Banc {
         }
     }
 
-    public boolean ingressarCompte(String numero, double quantitat){
+    
 
+    public boolean retirarCompte(String numero, double quantitat, String dni){
 
-        for(Compte c: comptes) {   // si no troba compte retorna false
-            if(c.numero.equals(numero)){
-                c.ingressar(quantitat); // reutilitzem el ingressar
-                return true;
+        Compte c= cercarCompte(numero);
+        if(c==null) return false;
 
-            }
+        if(c.getTitular().getDni().equals(dni)){
+            return c.retirar(quantitat);
+
         }
         return false;
     }
 
-    public boolean retirarCompte(String numero, double quantitat){
+    
+
+    public boolean transfarenciaCompte (String numero, double quantitat, String dni, String numero2){
 
 
-        for(Compte c: comptes) {   // si no troba compte retorna false
-            if(c.numero.equals(numero)){
-                c.retirar(quantitat); // reutilitzem el retirar
-                return true;
+        Compte origen= this.cercarCompte(numero);
+        Compte desti= this.cercarCompte(numero2);
+        if(origen!=null && desti!=null && origen.getTitular().getDni().equals(dni)){
+            return origen.transferencia(desti, quantitat);
 
-            }
         }
-        return false;
-    }
-
-    public boolean transfarenciaCompte (String numero, double quantitat, String dni, String PIN, String numero2){
-        if(validar(dni, PIN)==null)return false;
-        Compte origen = cercarCompte(numero);
-        Compte desti = cercarCompte(numero2);
-        if(origen != null && desti != null)return origen.transferencia(desti, quantitat);
-        return false;
+        return false;  
     }
 
     public void mostrarComptesClient(String dni){
@@ -137,13 +131,25 @@ public class Banc {
         
     }
 
-    public Compte cercarCompte(String dni){
+    public Compte cercarCompte(String numero){
         for(Compte c: comptes){
-            if(c != null && c.getNumero().equals(dni)) return c;
+            if(c.numero.equals(numero)){
+                 return c;
+            } 
 
         }
         return null;
     }
+
+    public boolean ingressarCompte(String numero, double quantitat){
+
+        Compte c= cercarCompte(numero);
+        if(c==null)return false;
+        c.ingressar(quantitat);
+        return true;
+    }
+
+    
 
   
 
