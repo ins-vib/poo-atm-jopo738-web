@@ -53,8 +53,6 @@ public class Banc {
         return nom;
     }
 
-    
-
     public Client validar(String dni, String pin){
 
         for(Client cli: this.clients){
@@ -87,8 +85,6 @@ public class Banc {
         }
     }
 
-    
-
     public boolean retirarCompte(String numero, double quantitat, String dni){
 
         Compte c= cercarCompte(numero);
@@ -100,8 +96,6 @@ public class Banc {
         }
         return false;
     }
-
-    
 
     public boolean transfarenciaCompte (String numero, double quantitat, String dni, String numero2){
 
@@ -148,12 +142,4 @@ public class Banc {
         c.ingressar(quantitat);
         return true;
     }
-
-    
-
-  
-
-   
-
-
 }

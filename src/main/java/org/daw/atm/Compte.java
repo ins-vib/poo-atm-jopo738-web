@@ -119,14 +119,11 @@ public class Compte {
         this.titular = titular;
     }
 
-
-
     @Override  // serveix per sobreescriure i ens indica que està sobreescrivint
     public String toString() {  // en aquest cas com no te cap pare el que sobreescriu és el object que és la classe que es la major (es crea sempre)
         return "Compte [numero=" + numero + ", saldo=" + saldo + ", titular=" + titular + ", interesAnual="
                 + interesAnual + "]";
     }
-
 
     public void mostrarMoviments(){
         for(Moviment s: moviments){
@@ -140,20 +137,5 @@ public class Compte {
 
     public static void resetContador(){
         comptador=1;
-    }
-
-
-
-    
-
-    
-
-
-    
-
-
-
-    
-
-    
+    }    
 }

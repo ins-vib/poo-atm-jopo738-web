@@ -41,6 +41,4 @@ public class CompteEstalvi extends Compte {
      public String toString() {
         return "CompteEstalvi [saldoMinim=" + saldoMinim + "]" + super.toString();
      }
-
-    
 }

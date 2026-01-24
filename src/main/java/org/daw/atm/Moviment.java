@@ -52,21 +52,4 @@ public class Moviment {
     public double getQuantitat() {
         return quantitat;
     }
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
 }

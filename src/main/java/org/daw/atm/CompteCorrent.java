@@ -14,10 +14,6 @@ public class CompteCorrent extends Compte{
         this.limitDescobert = limitDescobert;
     }
 
-
-
-
-
     public double getLimitDescobert() {
         return limitDescobert;
     }
@@ -49,7 +45,4 @@ public class CompteCorrent extends Compte{
         sb.append(super.toString());  // amb aixo accedim al toString del seu pare gràcies al seu pare "SUPER" PER ACONSEGUIR COSSES DEL PARE
         return sb.toString();
     }
-
-
-    
 }

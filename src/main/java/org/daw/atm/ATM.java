@@ -183,11 +183,11 @@ public class ATM {
 
 
         //pregunta per teclat
-        double quantitat=100;
-        String numero= "ES100-1111-1";
-        caixer.ingresar(numero, quantitat);
+        //double quantitat=100;
+        //String numero= "ES100-1111-1";
+        //caixer.ingresar(numero, quantitat);
 
-        caixer.ingresar(numero, quantitat);
+        //caixer.ingresar(numero, quantitat);
 
         //caixer.retirar(numero, quantitat); // implementar
         // només es pot retirar d'un compte que pertanyi al client!!
@@ -336,14 +336,14 @@ public class ATM {
 //     System.out.println(c.getNumero()+" "+c.getTitular().getDni());
 // }
 
-Banc banc= new Banc("Banc DAW");
+//Banc banc= new Banc("Banc DAW");
 // Client cli= banc.validar("33333333D", "3333");
 // if(cli!=null){
 //     System.out.println("Client validat!!!");
 //     System.out.println(cli.getNom());
 // }
 
-banc.mostrarComptes();
+//banc.mostrarComptes();
 
 
 

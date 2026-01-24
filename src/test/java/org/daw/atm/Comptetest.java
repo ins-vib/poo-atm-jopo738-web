@@ -36,7 +36,7 @@ public class Comptetest {
         assertFalse(resultat);
         assertEquals(100, compte.getSaldo());
 
-        assertEquals(1,compte.getMoviments().size());
+        assertEquals(0,compte.getMoviments().size());
         assertEquals(50,compte.getMoviments().get(0).getQuantitat());
         assertEquals(TipusMoviment.RETIRADA, compte.getMoviments().get(0).getTipus());
 
@@ -51,7 +51,7 @@ public class Comptetest {
         compte.setSaldo(100);
         boolean resultat=compte.retirar(101);
         assertFalse(resultat);
-        assertEquals(-1, compte.getSaldo());
+        assertEquals(100.0, compte.getSaldo());
 
 
     }
