@@ -138,6 +138,10 @@ public class Compte {
         return moviments;
     }
 
+    public static void resetContador(){
+        comptador=1;
+    }
+
 
 
     
