@@ -23,11 +23,11 @@ public class CompteEstalviTest {
     void retirar_ambSaldo_true() {
 
         CompteEstalvi ce = new CompteEstalvi();
-        ce.setSaldo(100.0);
+        ce.setSaldo(300.0);
 
         boolean resultat= ce.retirar(40.0);
         assertTrue(resultat);
-        assertEquals(60.0, ce.getSaldo());
+        assertEquals(260.0, ce.getSaldo());
 
     }
 

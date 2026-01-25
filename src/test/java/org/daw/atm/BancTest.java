@@ -94,9 +94,7 @@ public class BancTest {
         boolean resultat= banc.retirarCompte("ES100-1111-1", 50.0, "33333333D");
         assertTrue(resultat);
         assertEquals(50.0, banc.cercarCompte("ES100-1111-1").getSaldo());
-        
-        
-         
+     
     }
 
     @Test
@@ -107,10 +105,7 @@ public class BancTest {
 
         boolean resultat= banc.retirarCompte("ES100-1111-1", 50.0, "33333444D");
         assertFalse(resultat);
-        
-        
-        
-         
+       
     }
 
 
@@ -122,10 +117,7 @@ public class BancTest {
 
         boolean resultat= banc.retirarCompte("ES100-1111-1", 1150, "33333333D");
         assertFalse(resultat);
-        
-        
-        
-         
+       
     }
 
     @Test
@@ -136,10 +128,7 @@ public class BancTest {
 
         boolean resultat= banc.retirarCompte("ES100-1333-1", 1150, "33333333D");
         assertFalse(resultat);
-        
-        
-        
-         
+   
     }
 
 
@@ -156,9 +145,6 @@ public class BancTest {
         assertEquals(350.0, banc.cercarCompte("ES100-1111-2").getSaldo());
         assertEquals(50.0, banc.cercarCompte("ES100-1111-1").getSaldo());
         
-        
-        
-         
     }
 
     @Test
@@ -170,11 +156,6 @@ public class BancTest {
         boolean resultat= banc.transfarenciaCompte("ES100-1122-1", 50.0, "33333333D", "ES100-1111-2");
         assertFalse(resultat);
         assertEquals(100.0, banc.cercarCompte("ES100-1111-1").getSaldo()); // no es retiren els diners
-        
-        
-        
-        
-        
          
     }
 
@@ -187,12 +168,7 @@ public class BancTest {
         boolean resultat= banc.transfarenciaCompte("ES100-1111-1", 1550.0, "33333333D", "ES100-1111-2");
         assertFalse(resultat);
         assertEquals(100.0, banc.cercarCompte("ES100-1111-1").getSaldo()); // no es retiren els diners
-        
-        
-        
-        
-        
-         
+      
     }
 
     @Test
@@ -205,13 +181,7 @@ public class BancTest {
         assertFalse(resultat);
         assertEquals(100.0, banc.cercarCompte("ES100-1111-1").getSaldo()); // no es retiren els diners
         
-        
-        
-        
-        
-         
     }
-
 
     @Test
     void transferenciaCompte_segonnumeroincorrecte_NomouDinersEntreComptes(){
@@ -227,25 +197,5 @@ public class BancTest {
         
         
          
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
+    }   
 }

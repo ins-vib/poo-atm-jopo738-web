@@ -1,16 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.daw.atm.Comptetest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.057 s <<< FAILURE! -- in org.daw.atm.Comptetest
-org.daw.atm.Comptetest.testRetirarQuantitatIncorrecte -- Time elapsed: 0.029 s <<< ERROR!
-java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
-	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
-	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
-	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
-	at java.base/java.util.Objects.checkIndex(Objects.java:365)
-	at java.base/java.util.ArrayList.get(ArrayList.java:428)
-	at org.daw.atm.Comptetest.testRetirarQuantitatIncorrecte(Comptetest.java:40)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.081 s -- in org.daw.atm.Comptetest

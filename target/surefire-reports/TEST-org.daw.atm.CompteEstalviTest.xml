@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.daw.atm.CompteEstalviTest" time="0.062" tests="3" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.daw.atm.CompteEstalviTest" time="0.047" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="ES"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Users\jpome\oracleJdk-25\bin"/>
-    <property name="sun.java.command" value="C:\Users\jpome\AppData\Local\Temp\surefire14398069881511231111\surefirebooter-20260124110847302_3.jar C:\Users\jpome\AppData\Local\Temp\surefire14398069881511231111 2026-01-24T11-08-47_185-jvmRun1 surefire-20260124110847302_1tmp surefire_0-20260124110847302_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\jpome\AppData\Local\Temp\surefire17677143629050396350\surefirebooter-20260125092107243_3.jar C:\Users\jpome\AppData\Local\Temp\surefire17677143629050396350 2026-01-25T09-21-07_126-jvmRun1 surefire-20260125092107243_1tmp surefire_0-20260125092107243_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="org.daw.atm.CompteEstalviTest"/>
     <property name="surefire.test.class.path" value="C:\Users\jpome\ATM\target\test-classes;C:\Users\jpome\ATM\target\classes;C:\Users\jpome\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.0\junit-jupiter-5.10.0.jar;C:\Users\jpome\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\jpome\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\jpome\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\jpome\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\jpome\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.0\junit-jupiter-params-5.10.0.jar;C:\Users\jpome\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.0\junit-jupiter-engine-5.10.0.jar;C:\Users\jpome\.m2\repository\org\junit\platform\junit-platform-engine\1.10.0\junit-platform-engine-1.10.0.jar;"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\jpome\AppData\Local\Temp\surefire14398069881511231111\surefirebooter-20260124110847302_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\jpome\AppData\Local\Temp\surefire17677143629050396350\surefirebooter-20260125092107243_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="25+37-LTS-3491"/>
@@ -62,20 +62,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="retirar_senseSaldo_false" classname="org.daw.atm.CompteEstalviTest" time="0.02"/>
-  <testcase name="ingressar_quantitatPositiva_actualitzaSaldo" classname="org.daw.atm.CompteEstalviTest" time="0.01"/>
-  <testcase name="retirar_ambSaldo_true" classname="org.daw.atm.CompteEstalviTest" time="0.009">
-    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
-	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
-	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
-	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:179)
-	at org.daw.atm.CompteEstalviTest.retirar_ambSaldo_true(CompteEstalviTest.java:29)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-]]></failure>
-  </testcase>
+  <testcase name="retirar_senseSaldo_false" classname="org.daw.atm.CompteEstalviTest" time="0.018"/>
+  <testcase name="ingressar_quantitatPositiva_actualitzaSaldo" classname="org.daw.atm.CompteEstalviTest" time="0.009"/>
+  <testcase name="retirar_ambSaldo_true" classname="org.daw.atm.CompteEstalviTest" time="0.001"/>
 </testsuite>

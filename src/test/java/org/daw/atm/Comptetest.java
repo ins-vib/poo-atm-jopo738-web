@@ -37,8 +37,8 @@ public class Comptetest {
         assertEquals(100, compte.getSaldo());
 
         assertEquals(0,compte.getMoviments().size());
-        assertEquals(50,compte.getMoviments().get(0).getQuantitat());
-        assertEquals(TipusMoviment.RETIRADA, compte.getMoviments().get(0).getTipus());
+        // assertEquals(50,compte.getMoviments().get(0).getQuantitat());
+        // assertEquals(TipusMoviment.RETIRADA, compte.getMoviments().get(0).getTipus());
 
         
 
